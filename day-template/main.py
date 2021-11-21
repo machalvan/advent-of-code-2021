@@ -1,3 +1,6 @@
+from utils import *
+
+
 def part1(input):
 
     return
