@@ -1,6 +1,3 @@
-from utils import *
-
-
 def part1(input):
 
     return
@@ -13,8 +10,7 @@ def part2(input):
 
 if __name__ == '__main__':
     with open('input.txt') as f:
-        file_str = f.read()
-        file = file_str.strip().split('\n')
+        lines = [line.strip() for line in f]
 
-    print(part1(list(file)))
-    print(part2(list(file)))
+    print(part1(lines))
+    print(part2(lines))
