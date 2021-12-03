@@ -1,9 +1,9 @@
-def part1(input):
+def part1(lines):
 
     return
 
 
-def part2(input):
+def part2(lines):
 
     return
 
