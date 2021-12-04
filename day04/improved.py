@@ -1,14 +1,11 @@
-from utils import int_list, transpose
-
-
 def part1(lines):
-    nums, *board = lines
+    nums, *boards = lines.split('\n\n')
     nums = [int(num) for num in nums.split(',')]
     boards = [[[
-        int(cell) for cell in row.split()
-    ] for row in board.split('\n')
-    ] for board in '\n'.join(board).strip().split('\n\n')
-    ]
+        int(cell)
+        for cell in row.split()]
+        for row in board.split('\n')]
+        for board in boards]
 
     for num in nums:
         for i, board in enumerate(boards):
@@ -26,13 +23,13 @@ def part1(lines):
 
 
 def part2(lines):
-    nums, *board = lines
+    nums, *boards = lines.split('\n\n')
     nums = [int(num) for num in nums.split(',')]
     boards = [[[
-        int(cell) for cell in row.split()
-    ] for row in board.split('\n')
-    ] for board in '\n'.join(board).strip().split('\n\n')
-    ]
+        int(cell)
+        for cell in row.split()]
+        for row in board.split('\n')]
+        for board in boards]
 
     winners = []
     for num in nums:
@@ -54,18 +51,8 @@ def part2(lines):
 
 
 if __name__ == '__main__':
-    # with open('input.txt') as f:
-    #     numbers, *boards = f.read().rstrip().split('\n\n')
-    # print(boards)
-    #
-    # numbers = [int(num) for num in numbers.split(',')]
-    #
-    # boards = [[line.split() for line in board.split('\n')] for board in boards]
-    #
-    # print(boards)
-
     with open('input.txt') as f:
-        lines = [line.strip() for line in f]
+        lines = f.read()
 
     print(part1(lines))
     print(part2(lines))
