@@ -2,10 +2,6 @@ def part1(input):
     lines = input.split('\n')
     blocks = [block.split('\n') for block in input.split('\n\n')]
 
-    print('input:', input)
-    print('lines:', lines)
-    print('blocks:', blocks)
-
     return
 
 
